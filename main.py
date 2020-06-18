@@ -97,7 +97,6 @@ def moveZero(board, x, y):
     board[x][y], board[zerox][zeroy] = board[zerox][zeroy], board[x][y]
 
 def printBoard(currBoard):
-    #print(currBoard)
     for a in range(0, dim):
         for b in range(0, dim):
             print(currBoard[a][b], end =" ")
@@ -170,8 +169,6 @@ if(__name__ == "__main__"):
             zerox, zeroy = getZeroPosition(board)
             if(validCoord( zerox + move[0] , zeroy + move[1])):
                 moveZero(newBoard, zerox + move[0] , zeroy + move[1])
-                #distance = getHeuristicDistance(newBoard)
-                
                 if( str(newBoard) not in visited.keys()):
                     toVisit.insert(newBoard)
                     visited[str(newBoard)] = str(board)
@@ -190,4 +187,3 @@ if(__name__ == "__main__"):
 
     end = time.time()
     print("Vreme: ", end - start)
-    #print("Number of iterations: " + str(iter))
